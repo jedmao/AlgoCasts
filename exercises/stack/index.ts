@@ -10,6 +10,22 @@
 //   s.pop(); // returns 2
 //   s.pop(); // returns 1
 
-class Stack {}
+export = class Stack {
+	private data = []
 
-module.exports = Stack;
+	public push(...items: any[]) {
+		this.data.push(...items)
+	}
+
+	public pop() {
+		return this.data.pop()
+	}
+
+	public peek() {
+		return this.data.slice(-1)[0]
+	}
+
+	public get length() {
+		return this.data.length
+	}
+}

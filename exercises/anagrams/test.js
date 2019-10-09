@@ -1,4 +1,4 @@
-const anagrams = require('./index.js');
+const anagrams = require('.');
 
 test('anagrams function exists', () => {
   expect(typeof anagrams).toEqual('function');

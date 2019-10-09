@@ -7,6 +7,10 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function capitalize(str) {}
+export = function capitalize(s: string) {
+	return s.replace(
+		/\b\w/g,
+		m => m.toLocaleUpperCase(),
+	)
+}
 
-module.exports = capitalize;

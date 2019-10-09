@@ -12,6 +12,13 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
-function midpoint(list) {}
+import { LinkedList } from '../linkedlist/index'
 
-module.exports = midpoint;
+export = function midpoint(list: LinkedList) {
+	let slow = list.head
+	let fast = list.head
+	while (fast = fast.next && fast.next.next) {
+		slow = slow.next
+	}
+	return slow
+}

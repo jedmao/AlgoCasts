@@ -12,6 +12,14 @@
 //   c.next = b;
 //   circular(l) // true
 
-function circular(list) {}
+import { LinkedList } from '../linkedlist'
 
-module.exports = circular;
+export = function circular(list: LinkedList) {
+	const first = list.getFirst()
+	for (const node of list) {
+		if (node.next === first) {
+			return true
+		}
+	}
+	return false;
+}

@@ -11,6 +11,21 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+import { LinkedList } from '../linkedlist'
 
-module.exports = fromLast;
+export = function fromLast(list: LinkedList, n: number) {
+	let slow = list.getFirst()
+	let fast = slow
+
+	while (n > 0) {
+		fast = fast.next
+		n--
+	}
+
+	while (fast.next) {
+		slow = slow.next
+		fast = fast.next
+	}
+
+	return slow
+}

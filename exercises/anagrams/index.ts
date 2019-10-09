@@ -8,6 +8,11 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+const allNonWordChars = /\W+/g
+export = function anagrams(a: string, b: string) {
+	return sortChars(a) === sortChars(b)
 
-module.exports = anagrams;
+	function sortChars(s: string) {
+		return s.replace(allNonWordChars, '').toLowerCase().split('').sort().join('')
+	}
+}

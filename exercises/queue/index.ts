@@ -8,6 +8,15 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+export = class Queue {
 
-module.exports = Queue;
+	private arr = []
+
+	public add(...items: any[]) {
+		this.arr.unshift(...items)
+	}
+
+	public remove() {
+		return this.arr.pop()
+	}
+}
